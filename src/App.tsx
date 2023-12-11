@@ -41,8 +41,23 @@ const boxVariants = {
       type: "spring",
       duration : 0.5,
       bounce : 0.5,
+      delayChildren : 0.5,
+      staggerChildren : 0.2,
     }
   }
+}
+
+const circleVariants = {
+  start : {
+    opacity : 0,
+    y : 10,
+  },
+  end : {
+    opacity : 1,
+    y : 0,
+
+  },
+
 }
 
 
@@ -50,10 +65,10 @@ function App() {
   return (
     <Wrapper>
       <Box variants={boxVariants} initial="start" animate="end">
-        <Circle/>
-        <Circle/>
-        <Circle/>
-        <Circle/>
+        <Circle variants={circleVariants} />
+        <Circle variants={circleVariants} />
+        <Circle variants={circleVariants} /> 
+        <Circle variants={circleVariants} />
       </Box>
     </Wrapper>
   );
