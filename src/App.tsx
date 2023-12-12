@@ -73,7 +73,7 @@ const Circle = styled(motion.div)`
 
 // }
 
-const boxVariants= {
+const boxVariants= { 
   hover: { rotateZ : 90},
   click : {scale : 1, borderRadius : "100px" },
   

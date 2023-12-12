@@ -5,6 +5,7 @@ import { RecoilRoot } from "recoil";
 import App from './App';
 import { darkTheme } from "./theme";
 import MotionValues from './MotionValues'
+import SvgTest from './SvgTest'
 
 const GlobalStyle = createGlobalStyle`
 @font-face {
@@ -86,7 +87,7 @@ root.render(
     <RecoilRoot>
       <ThemeProvider theme={darkTheme}>
         <GlobalStyle />
-        <MotionValues />
+        <SvgTest />
       </ThemeProvider>
     </RecoilRoot>
   </React.StrictMode>,
