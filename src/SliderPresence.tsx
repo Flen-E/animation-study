@@ -46,7 +46,8 @@ const boxVariants ={
             duration : 0.3,
         }
     })
-}
+};
+
 
 function SliderPresence() {
     const [visible, setVisible] = useState(1);
