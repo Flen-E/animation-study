@@ -8,6 +8,7 @@ import MotionValues from './MotionValues'
 import SvgTest from './SvgTest'
 import AnimPresence from './AnimPresence';
 import SliderPresence from './SliderPresence';
+import ChangerAnim from './ChangerAnim';
 
 const GlobalStyle = createGlobalStyle`
 @font-face {
@@ -89,7 +90,7 @@ root.render(
     <RecoilRoot>
       <ThemeProvider theme={darkTheme}>
         <GlobalStyle />
-        <SliderPresence />
+        <ChangerAnim />
       </ThemeProvider>
     </RecoilRoot>
   </React.StrictMode>,
