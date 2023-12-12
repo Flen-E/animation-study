@@ -6,6 +6,7 @@ import App from './App';
 import { darkTheme } from "./theme";
 import MotionValues from './MotionValues'
 import SvgTest from './SvgTest'
+import AnimPresence from './AnimPresence';
 
 const GlobalStyle = createGlobalStyle`
 @font-face {
@@ -71,7 +72,7 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
   color:black;
   line-height: 1.2;
-  
+  background:linear-gradient(135deg,#e09,#d0e);
 }
 a {
   text-decoration:none;
@@ -87,7 +88,7 @@ root.render(
     <RecoilRoot>
       <ThemeProvider theme={darkTheme}>
         <GlobalStyle />
-        <SvgTest />
+        <AnimPresence />
       </ThemeProvider>
     </RecoilRoot>
   </React.StrictMode>,
