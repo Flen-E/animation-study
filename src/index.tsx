@@ -3,22 +3,17 @@ import ReactDOM from 'react-dom/client';
 import { ThemeProvider, createGlobalStyle } from "styled-components";
 import { RecoilRoot } from "recoil";
 import App from './App';
-import { darkTheme } from "./theme";
+import { theme } from "./theme";
 import MotionValues from './MotionValues'
 import SvgTest from './SvgTest'
 import AnimPresence from './AnimPresence';
 import SliderPresence from './SliderPresence';
 import ChangerAnim from './ChangerAnim';
+import FinalAnim from './FinalAnim';
 
 const GlobalStyle = createGlobalStyle`
-@font-face {
-    font-family: 'insungitCutelivelyjisu';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/insungitCutelivelyjisu.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-font-family: insungitCutelivelyjisu, sans-serif;
- html, body, div, span, applet, object, iframe,
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap');
+html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
@@ -49,7 +44,6 @@ footer, header, hgroup, main, menu, nav, section {
 }
 body {
   line-height: 1;
-  font-family: 'Source Sans Pro', sans-serif;
 }
 menu, ol, ul {
   list-style: none;
@@ -66,13 +60,13 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-*{
+* {
   box-sizing: border-box;
 }
 body {
   font-weight: 300;
   font-family: 'Source Sans Pro', sans-serif;
-  color:black;
+  color:${(props) => props.theme.white.darker};
   line-height: 1.2;
   background:linear-gradient(135deg,#e09,#d0e);
 }
@@ -88,9 +82,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <RecoilRoot>
-      <ThemeProvider theme={darkTheme}>
+      <ThemeProvider theme={theme}>
         <GlobalStyle />
-        <ChangerAnim />
+        <FinalAnim />
       </ThemeProvider>
     </RecoilRoot>
   </React.StrictMode>,
