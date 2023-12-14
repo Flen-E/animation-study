@@ -30,19 +30,19 @@ const Circle = styled(motion.div)`
 `;
 
 const Grid = styled.div`
-  display:grid;
-  grid-template-columns  : repeat(3, 1fr);
-  width : 50vw;
-  gap : 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 50vw;
+  gap: 10px;
   div:first-child,
   div:last-child {
-    grid-column : span 2;
+    grid-column: span 2;
   }
 `;
 
 const Overlay = styled(motion.div)`
-  width  :100% ;
-  height : 100%;
+  width: 100%;
+  height: 100%;
 
   position: absolute;
   display: flex;
@@ -51,23 +51,26 @@ const Overlay = styled(motion.div)`
 `;
 
 function FinalAnim() {
-  const [clicked, setClicked] = useState(false);
-  const toggle = () => setClicked((prev) => !prev);
-
+  const [clickId, setClickId] = useState<null | string>(null);
   return (
-    <Wrapper onClick = {toggle}>
-        <Grid>
-            <Box layoutId = "hello"/>
-            <Box/>
-            <Box/>
-            <Box/>
-        </Grid>
-        <AnimatePresence>
-          {clicked ? <Overlay initial ={{backgroundColor : "rgba(0,0,0,0)"}} animate = {{backgroundColor : "rgba(0,0,0,0.5)"}} exit={{backgroundColor : "rgba(0,0,0,0)"}}>
-          <Box layoutId = "hello" style ={{width:400,height:200}}/>
-          </Overlay> : null}
-        </AnimatePresence>
-        
+    <Wrapper>
+      <Grid>
+        {[1, 2, 3, 4].map((n) => (
+          <Box onClick={()=> setClickId(n+"")} key={n} layoutId={n + ""} />
+        ))}
+      </Grid>
+      <AnimatePresence>
+        {clickId ? (
+          <Overlay
+            onClick={() => setClickId(null)}
+            initial={{ backgroundColor: "rgba(0,0,0,0)" }}
+            animate={{ backgroundColor: "rgba(0,0,0,0.5)" }}
+            exit={{ backgroundColor: "rgba(0,0,0,0)" }}
+          >
+            <Box layoutId={clickId + ""} style={{ width: 400, height: 200 }} />
+          </Overlay>
+        ) : null}
+      </AnimatePresence>
     </Wrapper>
   );
 }

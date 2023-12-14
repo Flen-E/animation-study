@@ -10,6 +10,7 @@ import AnimPresence from './AnimPresence';
 import SliderPresence from './SliderPresence';
 import ChangerAnim from './ChangerAnim';
 import FinalAnim from './FinalAnim';
+import Basic from './Basic';
 
 const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap');
@@ -84,7 +85,7 @@ root.render(
     <RecoilRoot>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        <FinalAnim />
+        <Basic />
       </ThemeProvider>
     </RecoilRoot>
   </React.StrictMode>,
