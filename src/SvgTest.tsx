@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import { delay, motion } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 
 const Wrapper = styled.div`
   height: 100vh;

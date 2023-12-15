@@ -8,6 +8,8 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+ 
+  
 `;
 
 const Box = styled(motion.div)`
@@ -20,7 +22,7 @@ const Box = styled(motion.div)`
   justify-content: center;
   align-items: center;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.06);
-  overflow: hidden;
+
 `;
 
 const Circle = styled(motion.div)`
@@ -36,19 +38,16 @@ function ChangerAnim() {
   const toggleClicked = () => setClicked((prev) => !prev);
   return (
     <Wrapper onClick={toggleClicked}>
-      <Box>
-        <AnimatePresence >
+
+      <Box>    
           {!clicked ? (
-            <Circle layoutId = "circle" style={{ borderRadius: 50 }}/>
+            <Circle  layoutId = "circle" style={{ borderRadius: 50,  }}/>
           ) : null}
-        </AnimatePresence>
       </Box>
       <Box>
-        <AnimatePresence >
           {!clicked ? null : (
-            <Circle layoutId = "circle" style={{ borderRadius: 0}}/>
+            <Circle  layoutId = "circle" style={{ borderRadius: 0,}}/>
           )}
-        </AnimatePresence>
       </Box>
     </Wrapper>
   );

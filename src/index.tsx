@@ -86,7 +86,7 @@ root.render(
     <RecoilRoot>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        <MotionValues />
+        <FinalAnim />
       </ThemeProvider>
     </RecoilRoot>
   </React.StrictMode>,
